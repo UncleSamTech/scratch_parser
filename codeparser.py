@@ -12,10 +12,22 @@ def input_reader(file_path):
 
     source_code = Path(file_path).read_text()
     store_lenght = 0
-
-    circ_queue = ringQueue(2)
-    circ_queue.decide_circular()
     
+    for character in source_code:
+        if character != source_code[-1]:
+            print(character)
+            code_stack.append(character)
+        
+            #print(source_code[-1])
+            #print('going')
+        else:
+            print('end')
+            #first_100_char = source_code[:500]
+            #circ_queue = ringQueue(100)
+            #print(type(source_code))
+    
+            #circ_queue.decide_circular(first_100_char)
+    print(code_stack)
 
 def code_lexer(read_input):
     code_imput =  read_input
